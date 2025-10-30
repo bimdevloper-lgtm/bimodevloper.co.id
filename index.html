@@ -1,1 +1,291 @@
-c
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bim Developer - Servis HP, Laptop & Jasa Digital</title>
+    <style>
+        /* Tema Warna: Hitam (#000), Biru Elektrik (#00FFFF), Putih (#FFF) */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #000 0%, #001122 100%);
+            color: #FFF;
+            overflow-x: hidden;
+        }
+        header {
+            background: #000;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 0 20px #00FFFF;
+            animation: fadeIn 1s ease-in;
+        }
+        .logo {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #00FFFF;
+            text-shadow: 0 0 10px #00FFFF;
+            /* Animasi rotasi dihapus */
+        }
+        .logo svg {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+        nav {
+            margin-top: 10px;
+        }
+        nav a {
+            color: #FFF;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #00FFFF;
+        }
+        section {
+            padding: 50px;
+            text-align: center;
+            animation: slideUp 1s ease-out;
+        }
+        .description {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+        .checkout {
+            background: rgba(0, 255, 255, 0.1);
+            border: 1px solid #00FFFF;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 600px;
+            animation: glow 2s infinite alternate;
+        }
+        .checkout h2 {
+            color: #00FFFF;
+        }
+        .checkout form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .checkout input, .checkout select, .checkout button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: #FFF;
+            color: #000;
+        }
+        .checkout button {
+            background: #00FFFF;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .checkout button:hover {
+            background: #0099CC;
+        }
+        .payment-details {
+            display: none; /* Tersembunyi secara default */
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid #00FFFF;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 600px;
+            text-align: left;
+        }
+        .payment-details h3 {
+            color: #00FFFF;
+        }
+        .payment-details img {
+            max-width: 200px;
+            margin: 10px 0;
+        }
+        .whatsapp-btn, .order-now-btn {
+            display: inline-block;
+            background: #00FFFF;
+            color: #000;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px;
+            animation: pulse 1.5s infinite;
+        }
+        .whatsapp-btn:hover, .order-now-btn:hover {
+            background: #0099CC;
+        }
+        footer {
+            background: #000;
+            text-align: center;
+            padding: 10px;
+            color: #FFF;
+        }
+        /* Animasi */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes glow {
+            from { box-shadow: 0 0 5px #00FFFF; }
+            to { box-shadow: 0 0 20px #00FFFF; }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="40" fill="#00FFFF" stroke="#FFF" stroke-width="5"/>
+                <text x="50" y="55" text-anchor="middle" fill="#000" font-size="20" font-family="Arial">BD</text>
+            </svg>
+            Bim Developer
+        </div>
+        <nav>
+            <a href="#home">Beranda</a>
+            <a href="#services">Layanan</a>
+            <a href="#contact">Kontak</a>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h1>Selamat Datang di Bim Developer</h1>
+        <div class="description">
+            Kami melayani servis HP dan Laptop dengan profesionalitas tinggi. Juga menerima jasa joki tugas, pembuatan laporan, dan pembuatan website. Inovasi teknologi untuk masa depan Anda!
+        </div>
+    </section>
+
+    <section id="services">
+        <h2>Layanan Kami</h2>
+        <div class="checkout">
+            <h2>Pesan Layanan Sekarang</h2>
+            <form id="checkoutForm">
+                <input type="text" id="name" placeholder="Nama Anda" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <select id="service" required>
+                    <option value="">Pilih Layanan</option>
+                    <option value="servis-hp">Servis HP</option>
+                    <option value="servis-laptop">Servis Laptop</option>
+                    <option value="joki-tugas">Joki Tugas</option>
+                    <option value="pembuatan-laporan">Pembuatan Laporan</option>
+                    <option value="pembuatan-website">Pembuatan Website</option>
+                </select>
+                <select id="payment" required>
+                    <option value="">Metode Pembayaran</option>
+                    <option value="transfer-bank">Transfer Bank</option>
+                    <option value="dana">DANA</option>
+                    <option value="ovo">OVO</option>
+                    <option value="gopay">GoPay</option>
+                    <option value="qris">QRIS</option>
+                    <option value="cod">COD</option>
+                </select>
+                <button type="submit">Checkout</button>
+            </form>
+            <!-- Tombol Pesan Langsung yang langsung ke WhatsApp -->
+            <a href="https://wa.me/6283822589214?text=Halo%20Bim%20Developer,%20saya%20ingin%20pesan%20layanan." class="order-now-btn" target="_blank">Pesan Langsung</a>
+        </div>
+        <div id="paymentDetails" class="payment-details">
+            <h3>Detail Pembayaran</h3>
+            <p id="paymentInfo"></p>
+            <!-- Placeholder untuk QR Code atau gambar -->
+            <img id="qrCode" src="" alt="QR Code" style="display: none;">
+        </div>
+        <a href="https://wa.me/6283822589214" class="whatsapp-btn" target="_blank">Chat WhatsApp</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Bim Developer. Semua Hak Dilindungi.</p>
+    </footer>
+
+    <script>
+        // Fungsi untuk menampilkan detail pembayaran
+        document.getElementById('checkoutForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const service = document.getElementById('service').value;
+            const payment = document.getElementById('payment').value;
+            const detailsDiv = document.getElementById('paymentDetails');
+            const infoP = document.getElementById('paymentInfo');
+            const qrImg = document.getElementById('qrCode');
+
+            // Reset
+            infoP.innerHTML = '';
+            qrImg.style.display = 'none';
+
+            // Detail berdasarkan metode pembayaran
+            if (payment === 'transfer-bank') {
+                infoP.innerHTML = `
+                    <strong>Transfer Bank:</strong><br>
+                    Bank: BCA<br>
+                    No. Rekening: 1234567890<br>
+                    Atas Nama: Bim Developer<br>
+                    Jumlah: Rp 50.000 (sesuai layanan)<br>
+                    Kirim bukti transfer ke WhatsApp kami.
+                `;
+            } else if (payment === 'dana') {
+                infoP.innerHTML = `
+                    <strong>DANA:</strong><br>
+                    Nomor: 083822589214<br>
+                    Jumlah: Rp 50.000 (sesuai layanan)<br>
+                    Kirim bukti pembayaran ke WhatsApp kami.
+                `;
+            } else if (payment === 'ovo') {
+                infoP.innerHTML = `
+                    <strong>OVO:</strong><br>
+                    Nomor: 083822589214<br>
+                    Jumlah: Rp 50.000 (sesuai layanan)<br>
+                    Kirim bukti pembayaran ke WhatsApp kami.
+                `;
+            } else if (payment === 'gopay') {
+                infoP.innerHTML = `
+                    <strong>GoPay:</strong><br>
+                    Nomor: 083822589214<br>
+                    Jumlah: Rp 50.000 (sesuai layanan)<br>
+                    Kirim bukti pembayaran ke WhatsApp kami.
+                `;
+            } else if (payment === 'qris') {
+                infoP.innerHTML = `
+                    <strong>QRIS:</strong><br>
+                    Scan QR Code di bawah untuk pembayaran.<br>
+                    Jumlah: Rp 50.000 (sesuai layanan)<br>
+                    Kirim bukti pembayaran ke WhatsApp kami.
+                `;
+                qrImg.src = 'https://via.placeholder.com/200x200?text=QRIS+Code'; // Ganti dengan URL QR code asli
+                qrImg.style.display = 'block';
+            } else if (payment === 'cod') {
+                infoP.innerHTML = `
+                    <strong>COD (Cash on Delivery):</strong><br>
+                    Bayar saat layanan selesai. Hubungi kami via WhatsApp untuk konfirmasi.
+                `;
+            }
+
+            // Tampilkan detail
+            detailsDiv.style.display = 'block';
+        });
+
+        // Animasi sederhana untuk elemen saat scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100) {
+                    section.style.animationPlayState = 'running';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
